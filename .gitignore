@@ -13,3 +13,5 @@
 *.lnp
 *.lst
 *.txt
+./Bin
+*.uvguix.*
