@@ -1,0 +1,15 @@
+*.o
+*.d
+*.crf
+*.lusuo
+*.axf
+*.htm
+*.dep
+*.hex
+*.map
+*.uvoptx
+*.iex
+*.bin
+*.lnp
+*.lst
+*.txt
