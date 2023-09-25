@@ -45,6 +45,16 @@ OF SUCH DAMAGE.
 #define LED4_GPIO_Port  GPIOA
 #define LED4_GPIO_Pin   GPIO_PIN_5
 
+#define USART0_TX_Port  GPIOA
+#define USART0_TX_Pin   GPIO_PIN_9
+#define USART0_RX_Port  GPIOA
+#define USART0_RX_Pin   GPIO_PIN_10
+#define DENUG_USART     USART0
+
+
+#define DEBUG_TX_BUFFER_SIZE    (1024)
+#define DEBUG_RX_BUFFER_SIZE    (1024)
+
 #endif /* __MAIN_H */
 
 

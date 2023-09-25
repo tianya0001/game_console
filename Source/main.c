@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include "main.h"
 #include "bsp_gpio.h"
+#include "bsp_usart.h"
 
 
 /*!
@@ -13,10 +14,17 @@
 */
 int main(void)
 {
+    int x = 0;
+
     systick_config();
 
     bsp_gpio_init();
+    bsp_usart_init(115200);
 
-    while(1) {
+    while(1) 
+    {
+        bsp_led_toggle(1);
+        debug_print("x = %d\n", x++);
+        delay_1ms(500);
     }
 }

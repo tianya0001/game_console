@@ -11,6 +11,7 @@ void bsp_gpio_init()
     rcu_periph_clock_enable(RCU_GPIOE);
     rcu_periph_clock_enable(RCU_GPIOG);
 
+    // LED
     gpio_mode_set(LED1_GPIO_Port, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, LED1_GPIO_Pin);
     gpio_output_options_set(LED1_GPIO_Port, GPIO_OTYPE_PP, GPIO_OSPEED_2MHZ, LED1_GPIO_Pin);
     GPIO_BC(LED1_GPIO_Port) = LED1_GPIO_Pin;
@@ -37,10 +38,79 @@ void bsp_gpio_deinit()
     gpio_deinit(GPIOG);
 }
 
+void bsp_led_set(int ledx)
+{
+    switch (ledx)
+    {
+    case 1:
+        gpio_bit_set(LED1_GPIO_Port, LED1_GPIO_Pin);
+        break;
+
+    case 2:
+        gpio_bit_set(LED2_GPIO_Port, LED2_GPIO_Pin);
+        break;
+    
+    case 3:
+        gpio_bit_set(LED3_GPIO_Port, LED3_GPIO_Pin);
+        break;
+    
+    case 4:
+        gpio_bit_set(LED4_GPIO_Port, LED4_GPIO_Pin);
+        break;
+    
+    default:
+        break;
+    }
+}
 
 
+void bsp_led_reset(int ledx)
+{
+    switch (ledx)
+    {
+    case 1:
+        gpio_bit_reset(LED1_GPIO_Port, LED1_GPIO_Pin);
+        break;
+
+    case 2:
+        gpio_bit_reset(LED2_GPIO_Port, LED2_GPIO_Pin);
+        break;
+    
+    case 3:
+        gpio_bit_reset(LED3_GPIO_Port, LED3_GPIO_Pin);
+        break;
+    
+    case 4:
+        gpio_bit_reset(LED4_GPIO_Port, LED4_GPIO_Pin);
+        break;
+    
+    default:
+        break;
+    }
+}
 
 
+void bsp_led_toggle(int ledx)
+{
+    switch (ledx)
+    {
+    case 1:
+        gpio_bit_toggle(LED1_GPIO_Port, LED1_GPIO_Pin);
+        break;
 
-
-
+    case 2:
+        gpio_bit_toggle(LED2_GPIO_Port, LED2_GPIO_Pin);
+        break;
+    
+    case 3:
+        gpio_bit_toggle(LED3_GPIO_Port, LED3_GPIO_Pin);
+        break;
+    
+    case 4:
+        gpio_bit_toggle(LED4_GPIO_Port, LED4_GPIO_Pin);
+        break;
+    
+    default:
+        break;
+    }
+}
