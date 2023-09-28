@@ -18,6 +18,7 @@ void bsp_usart_init(uint32_t baudrate)
     // 时钟配置
     rcu_periph_clock_enable(RCU_GPIOA);
     rcu_periph_clock_enable(RCU_USART0);
+    rcu_periph_clock_enable(RCU_DMA1);
 
     // GPIO配置
     gpio_af_set(USART0_TX_Port, GPIO_AF_7, USART0_TX_Pin);
